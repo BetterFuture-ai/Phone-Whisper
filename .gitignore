@@ -1,0 +1,26 @@
+# Never publish signing keys, model files, personal credentials or local build products
+.deps/
+.validation/
+.build/
+.build-initial/
+.checkpoints/
+.dist-initial/
+build/
+dist/
+Install/
+*.jks
+*.keystore
+*.pem
+*.p12
+*.key
+*.env
+.env*
+local.properties
+signing.json
+.DS_Store
+Thumbs.db
+*.log
+
+# Keep APKs in GitHub Releases, not the repository source tree.
+*.apk
+*.aab
