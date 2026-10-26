@@ -1,0 +1,1 @@
+ONNX Runtime 1.31.0, Copyright Microsoft Corporation. MIT License. https://github.com/microsoft/onnxruntime/blob/v1.31.0/LICENSE
