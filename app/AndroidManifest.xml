@@ -1,0 +1,19 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.jitu.fluidspeech" android:versionCode="8" android:versionName="0.4.4">
+ <uses-sdk android:minSdkVersion="33" android:targetSdkVersion="34"/>
+ <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+ <uses-permission android:name="android.permission.INTERNET"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+ <application android:label="Phone Whisper" android:theme="@style/AppTheme" android:icon="@drawable/ic_app" android:allowBackup="false" android:usesCleartextTraffic="false" android:supportsRtl="true">
+  <activity android:name=".MainActivity" android:exported="true"><intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter></activity>
+  <service android:name=".CompanionService" android:exported="true" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:foregroundServiceType="microphone" android:label="Phone Whisper voice button">
+   <intent-filter><action android:name="android.accessibilityservice.AccessibilityService"/></intent-filter>
+   <meta-data android:name="android.accessibilityservice" android:resource="@xml/companion"/>
+  </service>
+  <service android:name=".VoiceKeyboard" android:exported="true" android:permission="android.permission.BIND_INPUT_METHOD" android:label="Phone Whisper">
+   <intent-filter><action android:name="android.view.InputMethod"/></intent-filter>
+   <meta-data android:name="android.view.im" android:resource="@xml/method"/>
+  </service>
+ </application>
+ <instrumentation android:name=".BenchmarkRunner" android:targetPackage="com.jitu.fluidspeech" android:label="Local speech benchmark"/>
+</manifest>
